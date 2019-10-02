@@ -12,11 +12,15 @@
 ## Create Kafka Topics
 
 `
-
 path to kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic btctxcounter
-path to kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic btctxaggregator
-path to kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic btctxdetails
+`
 
+`
+path to kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic btctxaggregator
+`
+
+`
+path to kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic btctxdetails
 `
 
 ## Config
@@ -48,6 +52,7 @@ virtualenv -p python3 venv
 `
 
 run the consumer using the command below
+
 `
 ./run.sh
 `
@@ -63,6 +68,7 @@ virtualenv -p python3 venv
 `
 
 run the flask api using the command below
+
 `
 ./run.sh
 `
