@@ -72,3 +72,5 @@ run the flask api using the command below
 `
 ./run.sh
 `
+
+open 0.0.0.0:5000 to see the app home page
