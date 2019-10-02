@@ -1,0 +1,2 @@
+python-redis==0.2.2
+Flask==1.1.1
