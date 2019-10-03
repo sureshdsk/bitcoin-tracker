@@ -1,7 +1,7 @@
 from pyredis import Client
 from datetime import datetime, timedelta
 import json
-from config import REDIS_HOST, REDIS_AGGREGATE_KEY_NS, REDIS_TX_KEY_NS, REDIS_TX_COUNTER_KEY_NS
+from config import REDIS_HOST, REDIS_AGGREGATE_KEY_NS, REDIS_TX_KEY_NS, REDIS_TX_COUNTER_KEY_NS, REDIS_CACHE_EXPIRATION_HOURS
 
 redis_client = Client(host=REDIS_HOST)
 
@@ -30,7 +30,7 @@ class BitcoinBlock:
     def get_expiry_seconds(self):
         now_utc = datetime.utcnow()
         tx_datetime = self.get_transaction_utc_datetime()
-        expires_at = tx_datetime + timedelta(hours=1)
+        expires_at = tx_datetime + timedelta(hours=REDIS_CACHE_EXPIRATION_HOURS)
         return (now_utc - expires_at).seconds
 
 
